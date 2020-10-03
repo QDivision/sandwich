@@ -1,0 +1,11 @@
+*
+!.gitignore
+!assets/
+!assets/*
+!README.md
+!chip.yml
+!docker-compose.yml
+
+# Normally you'd want to gitignore this as well!
+# secretchip.yml
+

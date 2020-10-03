@@ -1,0 +1,44 @@
+version: '3.1'
+
+services:
+  sandwich-db:
+    image: postgres:9.6.13
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: sandwichdb
+    expose:
+      - 5432
+    ports:
+      - 5000:5432
+
+  food-db:
+    image: postgres:9.6.13
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: fooddb
+    expose:
+      - 5432
+    ports:
+      - 5001:5432
+
+  emoji-db:
+    image: postgres:9.6.13
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: emojidb
+    expose:
+      - 5432
+    ports:
+      - 5002:5432
+
+  food-mq:
+    image: rabbitmq:3-management
+    expose:
+      - 5672
+      - 15672
+    ports:
+      - 5003:5672
+      - 15002:15672

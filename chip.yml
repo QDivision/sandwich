@@ -1,0 +1,44 @@
+# Runs at start of every `install` and `run` subprocess
+setup: |
+  export sdkman_auto_answer=true
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+  export NVM_DIR="$HOME/.nvm"
+
+  if [ -f "$NVM_DIR/nvm.sh" ]; then
+      . "$NVM_DIR/nvm.sh"
+  else
+      . "/usr/local/opt/nvm/nvm.sh"
+  fi
+
+# Runs before `install` subprocesses for services
+install: |
+  sdk install java 11.0.2-open
+  nvm install 10.16.3
+
+# Runs at start of every service-level `install` and `run` subprocess,
+# after `setup`
+setup-service: |
+  sdk use java 11.0.2-open
+  nvm use 10.16.3
+
+services:
+  sandwich-ui:
+    repo: 'git@github.com:QDivision/sandwich-ui.git'
+    install: 'yarn install'
+    run: 'yarn start'
+
+  sandwich-api:
+    repo: 'git@github.com:QDivision/sandwich-api.git'
+    install: 'mvn clean package -D maven.test.skip=true'
+    run: 'mvn spring-boot:run -D spring-boot.run.profiles=local'
+
+  ingredient-api:
+    repo: 'git@github.com:QDivision/ingredient-api.git'
+    install: 'mvn clean package -D maven.test.skip=true'
+    run: 'mvn spring-boot:run -D spring-boot.run.profiles=local'
+
+  emoji-api:
+    repo: 'git@github.com:QDivision/emoji-api.git'
+    install: 'yarn install'
+    run: 'yarn start'
