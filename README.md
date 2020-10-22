@@ -1,3 +1,9 @@
+## Services
+* https://github.com/QDivision/sandwich-ui
+* https://github.com/QDivision/emoji-api
+* https://github.com/QDivision/ingredient-api
+* https://github.com/QDivision/sandwich-api
+
 ## `sandwich-service`
 
 ```
