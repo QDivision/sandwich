@@ -66,13 +66,13 @@ You can query the sandwich DBs using `pgcli` with the following commands:
 
 ```
 # sandwich-api database:
-PGPASSWORD=admin pgcli --user admin --host localhost --dbname sandwichdb --port 5000
+PGPASSWORD=sandwichadmin pgcli --user sandwichadmin --host localhost --dbname sandwichdb --port 5000
 
 # ingredient-api database:
-PGPASSWORD=admin pgcli --user admin --host localhost --dbname fooddb --port 5001
+PGPASSWORD=ingredientadmin pgcli --user ingredientadmin --host localhost --dbname ingredientdb --port 5001
 
 # emoji-api database:
-PGPASSWORD=admin pgcli --user admin --host localhost --dbname emojidb --port 5002
+PGPASSWORD=emojiadmin pgcli --user emojiadmin --host localhost --dbname emojidb --port 5002
 ```
 
 ## RabbitMQ Dashboard
@@ -80,6 +80,6 @@ PGPASSWORD=admin pgcli --user admin --host localhost --dbname emojidb --port 500
 You can view the RabbitMQ management dashboard at http://localhost:15002. Login using the following credentials:
 
 ```
-Username: admin
-Password: admin
+Username: wabbit
+Password: wabbit
 ```
