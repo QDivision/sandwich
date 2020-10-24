@@ -19,7 +19,7 @@ install: |
 # Runs at start of every service-level `install` and `run` subprocess,
 # after `setup`
 setup-service: |
-  sdk use java 11.0.2-open
+  echo 'no' | sdk use java 11.0.2-open
   nvm use 10.16.3
 
 services:
