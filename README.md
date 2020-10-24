@@ -2,14 +2,18 @@
 
 This repo is the entrypoint for the sandwich local setup. The files in this repo allow developers to quickly and easily stand up the all sandwich services, databases, and UIs on their local machines.
 
-## Services
+## Getting Started
 
-These repos contain all the code for the sandwich services and UI:
+> Make sure you have all the [prerequisites](#prerequisites) installed before running these commands.
 
-- https://github.com/QDivision/sandwich-ui
-- https://github.com/QDivision/emoji-api
-- https://github.com/QDivision/ingredient-api
-- https://github.com/QDivision/sandwich-api
+```
+git clone git@github.com:QDivision/sandwich.git
+cd sandwich
+chip sync
+chip install
+chip start
+chip logs
+```
 
 ## Prerequisites
 
@@ -47,16 +51,14 @@ Install the following tools if you do not already have them:
   yarn global add @qdivision/chip
   ```
 
-## Getting Started
+## Services
 
-```
-git clone git@github.com:QDivision/sandwich.git
-cd sandwich
-chip sync
-chip install
-chip start
-chip logs
-```
+These repos contain all the code for the sandwich services and UI:
+
+- https://github.com/QDivision/sandwich-ui
+- https://github.com/QDivision/emoji-api
+- https://github.com/QDivision/ingredient-api
+- https://github.com/QDivision/sandwich-api
 
 ## DB Queries
 
